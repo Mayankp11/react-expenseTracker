@@ -2,9 +2,6 @@ import { useState } from "react";
 import ExpenseList from "./ExpenseTracker/components/ExpenseList";
 import ExpenseFilter from "./ExpenseTracker/components/ExpenseFilter";
 import ExpenseForm from "./ExpenseTracker/components/ExpenseForm";
-import Form from "./components/Form";
-
-
 
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
