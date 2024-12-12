@@ -4,7 +4,7 @@ import ExpenseFilter from "./ExpenseTracker/components/ExpenseFilter";
 import ExpenseForm from "./ExpenseTracker/components/ExpenseForm";
 import Form from "./components/Form";
 
-export const categories = ["Groceries", "Utilities", "Entertainment"] as const;
+
 
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -22,7 +22,8 @@ const App = () => {
   return (
     <>
       <div className="mb-5">
-        <ExpenseForm />
+        {/* newExpense is created, first we add the preous expenses in our array and then we add the newExpenses and beacuse the id property of the expenses is not used, we create the id property */}
+        <ExpenseForm onSubmit={newExpense => setExpenses([...expenses,{...newExpense, id: expenses.length  + 1}])} />
       </div>
       <div className="mb-3">
         <ExpenseFilter
@@ -33,7 +34,7 @@ const App = () => {
         expenses={visibleExpenses}
         onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
       />
-      <Form />
+      
     </>
   );
 };
