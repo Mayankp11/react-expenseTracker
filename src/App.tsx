@@ -21,6 +21,7 @@ const App = () => {
 
   return (
     <>
+    <h1 className="header" >[Expense Tracker]</h1>
       <div className="mb-5">
         {/* newExpense is created, first we add the preous expenses in our array and then we add the newExpenses and beacuse the id property of the expenses is not used, we create the id property */}
         <ExpenseForm onSubmit={newExpense => setExpenses([...expenses,{...newExpense, id: expenses.length  + 1}])} />
